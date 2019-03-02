@@ -80,8 +80,12 @@ double Option::calc_put_price() const {
     return strike_price * exp(RFR*mt) * erfc(-d_2) - asset_price * erf(-d_1);
 }
 void Option::info() {
+     cout << "Underlying: " << endl;
     cout << "Strike Price: " << Option::getStrikePrice() << endl;
+    cout << "Risk Free-Rate: " << RFR*100 << "%" << endl;
     cout << "Asset Price: " << Option::getAssetPrice() << endl;
+    cout << "Volatility: " << sigma * 100 << "%" <<endl;
+    cout << "Maturity: " << mt << endl;
     cout << "Calculated Call Price... : " << Option::calc_call_price() << endl;
     cout << "Calculated Put Price.... : " << Option::calc_put_price() << endl;
     
